@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-pokemon';
+
+  pokemons = [
+    {
+      img: "006"
+    },
+    {
+      img: "009"
+    }
+  ]
 }

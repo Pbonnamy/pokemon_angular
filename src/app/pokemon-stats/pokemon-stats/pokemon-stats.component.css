@@ -1,0 +1,13 @@
+.poke-img {
+    height: 40vh;
+}
+
+.center {
+    display: inline-block; 
+    align-self: center;
+}
+
+.end {
+    display: inline-block; 
+    align-self: end;
+}
