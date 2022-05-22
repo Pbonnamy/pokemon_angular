@@ -1,16 +1,10 @@
 <html>
     <body>
-        <mat-grid-list cols="2" rowHeight="100vh">
-            <mat-grid-tile>
-                <div style="display: inline-block; align-self: end;">
-                    <app-pokemon-stats [pokemon]="pokemons[1]"></app-pokemon-stats>
-                </div>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <div style="display: inline-block; align-self: center;">
-                    <app-pokemon-stats [pokemon]="pokemons[0]"></app-pokemon-stats>
-                </div>
-            </mat-grid-tile>
-        </mat-grid-list>
+        <div style="position: absolute; top: 20vh; right: 10vw;">
+            <app-pokemon-stats [pokemon]="pokemons[0]"></app-pokemon-stats>
+        </div>
+        <div style="position: absolute; bottom: 10vh; left: 10vw;">
+            <app-pokemon-stats [pokemon]="pokemons[1]"></app-pokemon-stats>
+        </div>
     </body>
 </html>

@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from "@angular/material/grid-list";
 import { PokemonStatsComponent } from './pokemon-stats/pokemon-stats/pokemon-stats.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
         BrowserModule,
         BrowserAnimationsModule,
         MatGridListModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatCardModule
     ],
   providers: [],
   bootstrap: [AppComponent]
