@@ -2,10 +2,14 @@
     <body>
         <mat-grid-list cols="2" rowHeight="100vh">
             <mat-grid-tile>
-                <app-pokemon-stats [pokemon]="pokemons[1]" position="end"></app-pokemon-stats>
+                <div style="display: inline-block; align-self: end;">
+                    <app-pokemon-stats [pokemon]="pokemons[1]"></app-pokemon-stats>
+                </div>
             </mat-grid-tile>
             <mat-grid-tile>
-                <app-pokemon-stats [pokemon]="pokemons[0]" position="center"></app-pokemon-stats>
+                <div style="display: inline-block; align-self: center;">
+                    <app-pokemon-stats [pokemon]="pokemons[0]"></app-pokemon-stats>
+                </div>
             </mat-grid-tile>
         </mat-grid-list>
     </body>
