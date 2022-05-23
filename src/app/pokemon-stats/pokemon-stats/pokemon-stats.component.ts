@@ -3,13 +3,25 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-pokemon-stats',
   templateUrl: './pokemon-stats.component.html',
-  styleUrls: ['./pokemon-stats.component.css']
+  styleUrls: ['./pokemon-stats.component.css'],
 })
 export class PokemonStatsComponent implements OnInit {
   @Input() pokemon: any = {};
-  @Input() position: string = "";
+  @Input() position: string = '';
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  hpBarColor() {
+    const percent = (this.pokemon.currentPv * 100) / this.pokemon.pv;
+
+    if (percent > 75) {
+      return 'green';
+    } else if (percent > 50) {
+      return 'orange';
+    } else if (percent > 25) {
+      return 'yellow';
+    } else {
+      return 'red';
+    }
   }
-
 }
