@@ -13,11 +13,13 @@ export class AppComponent {
       img: '006',
       pv: 250,
       currentPv: 125,
+      name: 'Dracaufeu',
     },
     {
       img: '009',
       pv: 100,
       currentPv: 25,
+      name: 'Tortank',
     },
   ];
 }
