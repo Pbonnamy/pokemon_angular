@@ -1,4 +1,6 @@
 <body>
+  <app-battle-logs [battle_logs]="logs" ></app-battle-logs>
+
   <div style="display: flex; justify-content: center">
     <button
       mat-flat-button
@@ -9,6 +11,7 @@
       <mat-icon>{{ btnIcon }}</mat-icon>
     </button>
   </div>
+
   <div style="position: absolute; top: 20vh; right: 10vw">
     <app-pokemon-stats [pokemon]="battle.getPoke1()"></app-pokemon-stats>
   </div>

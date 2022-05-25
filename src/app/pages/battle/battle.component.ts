@@ -31,8 +31,14 @@ export class BattleComponent implements OnInit {
   btnIcon = 'play_arrow';
   started = false;
   battle = new Battle(this.pokemon1, this.pokemon2);
+  logs:string[] = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.logs.push("Test");
+    this.logs.push("Test");
+    this.logs.push("Test");
+    this.logs.push("Test");
+  }
 
   handleBattle(): void {
     if (!this.battle.isPlaying) {

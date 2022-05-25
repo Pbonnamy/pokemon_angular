@@ -11,9 +11,10 @@ import { BattleComponent } from './pages/battle/battle.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { BattleLogsComponent } from './components/battle-logs/battle-logs.component';
 
 @NgModule({
-  declarations: [AppComponent, PokemonStatsComponent, BattleComponent],
+  declarations: [AppComponent, PokemonStatsComponent, BattleComponent, BattleLogsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
