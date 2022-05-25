@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Pokemon } from 'src/models/pokemon';
 
 @Component({
   selector: 'app-pokemon-stats',
@@ -7,12 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PokemonStatsComponent implements OnInit {
   @Input() pokemon: any = {};
-  @Input() position: string = '';
 
   ngOnInit(): void {}
 
   hpBarColor() {
-    const percent = (this.pokemon.currentPv * 100) / this.pokemon.pv;
+    const percent = (this.pokemon.hp * 100) / this.pokemon.maxHp;
 
     if (percent > 75) {
       return 'green';

@@ -1,5 +1,12 @@
-<div style="position: relative;">
-    <img src="../../../assets/pokemons/{{pokemon.img}}.png" class="poke-img center" >
-    <mat-progress-bar mode="determinate" value="{{pokemon.currentPv * 100 / pokemon.pv}}" class="progress-bar {{hpBarColor()}}"></mat-progress-bar>
-    <span class="poke-name">{{pokemon.name}}</span>
+<div style="position: relative">
+  <img
+    src="../../../assets/pokemons/{{ pokemon.code }}.png"
+    class="poke-img center"
+  />
+  <mat-progress-bar
+    mode="determinate"
+    value="{{ (pokemon.hp * 100) / pokemon.maxHp }}"
+    class="progress-bar {{ hpBarColor() }}"
+  ></mat-progress-bar>
+  <span class="poke-name">{{ pokemon.name }}</span>
 </div>

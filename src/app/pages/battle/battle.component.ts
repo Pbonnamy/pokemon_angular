@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Battle } from 'src/models/battle';
+import { Pokemon } from 'src/models/pokemon';
 
 @Component({
   selector: 'app-battle',
@@ -6,20 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./battle.component.css'],
 })
 export class BattleComponent implements OnInit {
-  pokemons = [
-    {
-      img: '006',
-      pv: 250,
-      currentPv: 125,
-      name: 'Dracaufeu',
-    },
-    {
-      img: '009',
-      pv: 100,
-      currentPv: 25,
-      name: 'Tortank',
-    },
-  ];
+  pokemon1 = new Pokemon({
+    name: 'Dracaufeu',
+    atk: 50,
+    def: 30,
+    speed: 40,
+    maxHp: 300,
+    type: [],
+    code: '006',
+  });
 
-  ngOnInit(): void {}
+  pokemon2 = new Pokemon({
+    name: 'Tortank',
+    atk: 75,
+    def: 25,
+    speed: 15,
+    maxHp: 200,
+    type: [],
+    code: '009',
+  });
+
+  battle = new Battle(this.pokemon1, this.pokemon2);
+
+  ngOnInit(): void {
+    this.battle.start();
+  }
 }

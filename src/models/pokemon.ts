@@ -1,31 +1,33 @@
-import { PokemonType } from "./pokemon-type";
+import { PokemonType } from './pokemon-type';
 
 export interface PokemonProps {
-    name: string;
-    att: number;
-    def: number;
-    speed: number;
-    maxHp: number;
-    hp: number;
-    type: Array<PokemonType>;
+  code: string;
+  name: string;
+  atk: number;
+  def: number;
+  speed: number;
+  maxHp: number;
+  type: Array<PokemonType>;
 }
 
 export class Pokemon {
-    name: string;
-    att: number;
-    def: number;
-    speed: number;
-    maxHp: number;
-    hp: number;
-    type: Array<PokemonType>;
+  code: string;
+  name: string;
+  atk: number;
+  def: number;
+  speed: number;
+  maxHp: number;
+  hp: number;
+  type: Array<PokemonType>;
 
-    constructor (props: PokemonProps) {
-        this.name = props.name;
-        this.att = props.att;
-        this.def = props.def;
-        this.speed = props.speed;
-        this.maxHp = props.maxHp;
-        this.hp = props.hp;
-        this.type = props.type;
-    }
+  constructor(props: PokemonProps) {
+    this.code = props.code;
+    this.name = props.name;
+    this.atk = props.atk;
+    this.def = props.def;
+    this.speed = props.speed;
+    this.maxHp = props.maxHp;
+    this.hp = props.maxHp;
+    this.type = props.type;
+  }
 }
