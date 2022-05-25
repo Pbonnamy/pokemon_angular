@@ -28,7 +28,6 @@ export class BattleComponent implements OnInit {
     code: '009',
   });
 
-  btnText = 'START';
   btnIcon = 'play_arrow';
   started = false;
   battle = new Battle(this.pokemon1, this.pokemon2);
@@ -39,11 +38,9 @@ export class BattleComponent implements OnInit {
     if (!this.battle.isPlaying) {
       this.battle.isPlaying = true;
       this.battle.start();
-      this.btnText = 'PAUSE';
       this.btnIcon = 'pause';
     } else {
       this.battle.isPlaying = false;
-      this.btnText = 'RESUME';
       this.btnIcon = 'play_arrow';
     }
   }

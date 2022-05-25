@@ -4,11 +4,13 @@ export class Battle {
   poke1: Pokemon;
   poke2: Pokemon;
   isPlaying: boolean;
+  messages: Array<string>;
 
   constructor(poke1: Pokemon, poke2: Pokemon) {
     this.poke1 = poke1;
     this.poke2 = poke2;
     this.isPlaying = false;
+    this.messages = [];
   }
 
   delay(sec: number) {
