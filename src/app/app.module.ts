@@ -7,11 +7,13 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import { PokemonStatsComponent } from './components/pokemon-stats/pokemon-stats.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatCardModule} from "@angular/material/card";
+import { BattleComponent } from './pages/battle/battle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonStatsComponent
+    PokemonStatsComponent,
+    BattleComponent
   ],
     imports: [
         BrowserModule,
