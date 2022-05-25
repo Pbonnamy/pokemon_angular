@@ -7,7 +7,7 @@ import { Pokemon } from 'src/models/pokemon';
   styleUrls: ['./pokemon-stats.component.css'],
 })
 export class PokemonStatsComponent implements OnInit {
-  @Input() pokemon: any = {};
+  @Input() pokemon!: Pokemon;
 
   ngOnInit(): void {}
 
