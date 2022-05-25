@@ -1,5 +1,5 @@
-<body>
-  <app-battle-logs [battle_logs]="logs" ></app-battle-logs>
+<div class="container">
+  <app-battle-logs class="logs" [battle_logs]="logs"></app-battle-logs>
 
   <div style="display: flex; justify-content: center">
     <button
@@ -18,4 +18,4 @@
   <div style="position: absolute; bottom: 10vh; left: 10vw">
     <app-pokemon-stats [pokemon]="battle.getPoke2()"></app-pokemon-stats>
   </div>
-</body>
+</div>
