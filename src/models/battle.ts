@@ -4,7 +4,7 @@ export class Battle {
   poke1: Pokemon;
   poke2: Pokemon;
   isPlaying: boolean;
-  messages: Array<string>;
+  messages: string[];
 
   constructor(poke1: Pokemon, poke2: Pokemon) {
     this.poke1 = poke1;
@@ -26,7 +26,9 @@ export class Battle {
   }
 
   attack(attacker: Pokemon, defender: Pokemon) {
-    defender.hp -= attacker.atk - defender.def;
+    const dmg = attacker.atk - defender.def;
+    this.messages.push(attacker.name + " inflige " + dmg + " à " + defender.name);
+    defender.hp -= dmg;
   }
 
   async start(): Promise<void> {
