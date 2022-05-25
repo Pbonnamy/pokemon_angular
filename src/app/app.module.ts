@@ -3,28 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatGridListModule} from "@angular/material/grid-list";
+import { MatGridListModule } from '@angular/material/grid-list';
 import { PokemonStatsComponent } from './components/pokemon-stats/pokemon-stats.component';
-import {MatProgressBarModule} from "@angular/material/progress-bar";
-import {MatCardModule} from "@angular/material/card";
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material/card';
 import { BattleComponent } from './pages/battle/battle.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PokemonStatsComponent,
-    BattleComponent
+  declarations: [AppComponent, PokemonStatsComponent, BattleComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatProgressBarModule,
+    MatCardModule,
+    AppRoutingModule,
+    MatButtonModule,
+    MatIconModule,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatGridListModule,
-        MatProgressBarModule,
-        MatCardModule,
-        AppRoutingModule
-    ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

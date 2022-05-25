@@ -1,4 +1,15 @@
 <body>
+  <div style="display: flex; justify-content: center">
+    <button
+      mat-button
+      mat-flat-button
+      style="margin-top: 5vh"
+      (click)="handleBattle()"
+    >
+      {{ btnText }}
+      <mat-icon>{{ btnIcon }}</mat-icon>
+    </button>
+  </div>
   <div style="position: absolute; top: 20vh; right: 10vw">
     <app-pokemon-stats [pokemon]="battle.getPoke1()"></app-pokemon-stats>
   </div>

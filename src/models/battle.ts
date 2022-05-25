@@ -3,10 +3,12 @@ import { Pokemon } from './pokemon';
 export class Battle {
   poke1: Pokemon;
   poke2: Pokemon;
+  isPlaying: boolean;
 
   constructor(poke1: Pokemon, poke2: Pokemon) {
     this.poke1 = poke1;
     this.poke2 = poke2;
+    this.isPlaying = false;
   }
 
   delay(sec: number) {
@@ -26,9 +28,11 @@ export class Battle {
   }
 
   async start(): Promise<void> {
-    while (this.poke1.hp > 0 && this.poke2.hp > 0) {
-      this.attack(this.poke1, this.poke2);
-      await this.delay(1);
+    while (this.poke1.hp > 0 && this.poke2.hp > 0 && this.isPlaying) {
+      if (this.poke1.hp > 0) {
+        this.attack(this.poke1, this.poke2);
+        await this.delay(1);
+      }
 
       if (this.poke2.hp > 0) {
         this.attack(this.poke2, this.poke1);
