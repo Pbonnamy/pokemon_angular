@@ -8,6 +8,7 @@ import { PokemonStatsComponent } from './components/pokemon-stats/pokemon-stats.
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatCardModule} from "@angular/material/card";
 import { BattleComponent } from './pages/battle/battle.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BattleComponent } from './pages/battle/battle.component';
         BrowserAnimationsModule,
         MatGridListModule,
         MatProgressBarModule,
-        MatCardModule
+        MatCardModule,
+        AppRoutingModule
     ],
   providers: [],
   bootstrap: [AppComponent]
