@@ -13,3 +13,15 @@ body {
   font-family: "Pokemon-Hollow";
   src: url(../../../assets/fonts/Pokemon-Hollow.ttf);
 }
+
+.poke-btn {
+  background-image: url("../../../assets/favicon.png");
+  background-size: cover;
+}
+
+.poke-btn-icon {
+  color: #FB1B1B;
+  -webkit-text-stroke: 1px white;
+  text-shadow: 1px 1px 2px black;
+  transform: scale(2.5);
+}
