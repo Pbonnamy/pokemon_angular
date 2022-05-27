@@ -16,6 +16,7 @@ export class BattleComponent implements OnInit {
     maxHp: 300,
     type: [],
     code: '006',
+    playerNumber: 1,
   });
 
   pokemon2 = new Pokemon({
@@ -26,23 +27,28 @@ export class BattleComponent implements OnInit {
     maxHp: 200,
     type: [],
     code: '009',
+    playerNumber: 2,
   });
 
   btnIcon = 'play_arrow';
   started = false;
   battle = new Battle(this.pokemon1, this.pokemon2);
-  logs:string[] = [];
 
   ngOnInit(): void {}
 
   handleBattle(): void {
     if (!this.battle.isPlaying) {
       this.battle.isPlaying = true;
+      if(!this.started){
+        this.battle.messages.push({color:"yellow",text:this.pokemon1.name + " VS " + this.pokemon2.name});
+        this.started = true;
+      }
       this.battle.start();
       this.btnIcon = 'pause';
     } else {
       this.battle.isPlaying = false;
       this.btnIcon = 'play_arrow';
+      this.battle.messages.push({color:"grey",text:"the game is paused !"});
     }
   }
 }
