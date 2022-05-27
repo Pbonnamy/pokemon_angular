@@ -17,10 +17,13 @@
 .poke-btn {
   background-image: url("../../../assets/favicon.png");
   background-size: cover;
+  position: absolute;
+  top: 5vh;
+  right: 50%;
 }
 
 .poke-btn-icon {
-  color: #FB1B1B;
+  color: #fb1b1b;
   -webkit-text-stroke: 1px white;
   text-shadow: 1px 1px 2px black;
   transform: scale(2.5);

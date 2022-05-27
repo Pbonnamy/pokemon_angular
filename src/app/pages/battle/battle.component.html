@@ -1,14 +1,12 @@
 <div class="container">
-  <app-battle-logs class="logs" [battle_logs]="battle.messages" style="overflow: auto;"></app-battle-logs>
+  <app-battle-logs
+    class="logs"
+    [battle_logs]="battle.messages"
+    style="overflow: auto"
+  ></app-battle-logs>
 
   <div style="display: flex; justify-content: center">
-    <button
-      mat-flat-button
-      class="poke-btn"
-      style="margin-top: 5vh"
-      mat-fab
-      (click)="handleBattle()"
-    >
+    <button mat-flat-button class="poke-btn" mat-fab (click)="handleBattle()">
       <mat-icon class="poke-btn-icon">{{ btnIcon }}</mat-icon>
     </button>
   </div>
