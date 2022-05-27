@@ -4,7 +4,9 @@ export class Battle {
   poke1: Pokemon;
   poke2: Pokemon;
   isPlaying: boolean;
-  messages: Array<string>;
+  //messages: string[][];
+
+  messages: {color: string, text: string}[];
 
   constructor(poke1: Pokemon, poke2: Pokemon) {
     this.poke1 = poke1;
@@ -26,7 +28,9 @@ export class Battle {
   }
 
   attack(attacker: Pokemon, defender: Pokemon) {
-    defender.hp -= attacker.atk - defender.def;
+    const dmg = attacker.atk - defender.def;
+    this.messages.push({color:"blue",text:attacker.name + " inflige " + dmg + " à " + defender.name});
+    defender.hp -= dmg;
   }
 
   async start(): Promise<void> {
@@ -41,5 +45,7 @@ export class Battle {
         await this.delay(1);
       }
     }
+    if(this.poke1.hp <= 0) this.messages.push({color:"red",text:this.poke1.name + " est KO !"});
+    if(this.poke2.hp <= 0) this.messages.push({color:"red",text:this.poke2.name + " est KO !"});
   }
 }

@@ -1,0 +1,6 @@
+<div class="battle-log-div" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+  <span>Logs :</span>
+  <ul>
+    <li *ngFor="let item of battle_logs" [style.color]="item.color">{{ item.text }}</li>
+  </ul>
+</div>
