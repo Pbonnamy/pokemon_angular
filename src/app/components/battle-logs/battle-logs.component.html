@@ -1,6 +1,10 @@
-<div class="battle-log-div" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+<div class="battle-log-div">
   <span>Logs :</span>
-  <ul>
-    <li *ngFor="let item of battle_logs" [style.color]="item.color">{{ item.text }}</li>
-  </ul>
+  <div class="logs">
+    <ul>
+      <li *ngFor="let item of battle_logs.reverse()" [style.color]="item.color">
+        {{ item.text }}
+      </li>
+    </ul>
+  </div>
 </div>
