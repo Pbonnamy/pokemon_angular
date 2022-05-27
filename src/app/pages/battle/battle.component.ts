@@ -33,12 +33,7 @@ export class BattleComponent implements OnInit {
   battle = new Battle(this.pokemon1, this.pokemon2);
   logs:string[] = [];
 
-  ngOnInit(): void {
-    this.logs.push("Test");
-    this.logs.push("Test");
-    this.logs.push("Test");
-    this.logs.push("Test");
-  }
+  ngOnInit(): void {}
 
   handleBattle(): void {
     if (!this.battle.isPlaying) {
