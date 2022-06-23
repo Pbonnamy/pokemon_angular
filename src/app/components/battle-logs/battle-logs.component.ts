@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class BattleLogsComponent implements OnInit {
 
   @Input()battle_logs:{color: string, text: string}[] = [];
-  @Input()today : number = Date.now() ;
+  @Input()date : null | number = null ;
 
   constructor() { }
 

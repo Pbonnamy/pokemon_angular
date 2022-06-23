@@ -10,9 +10,10 @@ import { Pokemon } from 'src/models/pokemon';
 export class BattleComponent implements OnInit {
   pokemon1! : Pokemon ;
   pokemon2! : Pokemon ;
-  btnIcon! : string;
-  started! : boolean ;
   battle! : Battle ;
+  btnIcon = 'play_arrow';
+  started = false;
+  date : null | number = null;
   ngOnInit() : void {
     this.pokemon1 = new Pokemon({
       name: 'Dracaufeu',
@@ -35,8 +36,6 @@ export class BattleComponent implements OnInit {
       code: '009',
       playerNumber: 2,
     });
-    this.btnIcon = 'play_arrow';
-    this.started = false;
     this.battle = new Battle(this.pokemon1, this.pokemon2);
   }
 
@@ -46,13 +45,14 @@ export class BattleComponent implements OnInit {
       if(!this.started){
         this.battle.messages.push({color:"yellow", text:this.pokemon1.name + " VS " + this.pokemon2.name});
         this.started = true;
+        this.date = Date.now() ;
       }
       this.battle.start();
       this.btnIcon = 'pause';
     } else {
       this.battle.isPlaying = false;
       this.btnIcon = 'play_arrow';
-      this.battle.messages.push({color:"grey",text:"... The game is paused ..."});
+      this.battle.messages.push({color:"grey",text:"... Le jeu est en pause ..."});
     }
   }
 }

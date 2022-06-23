@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -13,6 +13,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { BattleLogsComponent } from './components/battle-logs/battle-logs.component';
 
+import localFR from '@angular/common/locales/fr';
+import {registerLocaleData} from "@angular/common";
+registerLocaleData(localFR)
+
 @NgModule({
   declarations: [AppComponent, PokemonStatsComponent, BattleComponent, BattleLogsComponent],
   imports: [
@@ -25,7 +29,7 @@ import { BattleLogsComponent } from './components/battle-logs/battle-logs.compon
     MatButtonModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
