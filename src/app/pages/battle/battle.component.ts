@@ -40,7 +40,7 @@ export class BattleComponent implements OnInit {
     if (!this.battle.isPlaying) {
       this.battle.isPlaying = true;
       if(!this.started){
-        this.battle.messages.push({color:"yellow",text:this.pokemon1.name + " VS " + this.pokemon2.name});
+        this.battle.messages.push({color:"yellow", text:this.pokemon1.name + " VS " + this.pokemon2.name});
         this.started = true;
       }
       this.battle.start();
@@ -48,7 +48,7 @@ export class BattleComponent implements OnInit {
     } else {
       this.battle.isPlaying = false;
       this.btnIcon = 'play_arrow';
-      this.battle.messages.push({color:"grey",text:"the game is paused !"});
+      this.battle.messages.push({color:"grey", text:"the game is paused !"});
     }
   }
 }

@@ -1,5 +1,6 @@
 <div style="position: relative">
   <img
+    [ngStyle]="{'filter': (pokemon.hp <= 0) ? 'grayscale(100%)' : ''}"
     src="../../../assets/pokemons/{{ pokemon.code }}.png"
     class="poke-img center"
   />
