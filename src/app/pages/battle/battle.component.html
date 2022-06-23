@@ -1,7 +1,7 @@
 <div class="container">
   <app-battle-logs
     class="logs"
-    [battle_logs]="battle.messages"
+    [battle_logs]="battleService.messages"
     style="overflow: auto"
   ></app-battle-logs>
 
@@ -12,9 +12,9 @@
   </div>
 
   <div style="position: absolute; top: 20vh; right: 10vw">
-    <app-pokemon-stats [pokemon]="battle.getPoke1()"></app-pokemon-stats>
+    <app-pokemon-stats [pokemon]="pokemon1"></app-pokemon-stats>
   </div>
   <div style="position: absolute; bottom: 10vh; left: 10vw">
-    <app-pokemon-stats [pokemon]="battle.getPoke2()"></app-pokemon-stats>
+    <app-pokemon-stats [pokemon]="pokemon2"></app-pokemon-stats>
   </div>
 </div>

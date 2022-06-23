@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Battle } from 'src/models/battle';
+import { BattleService } from "../../../services/battle.service";
 import { Pokemon } from 'src/models/pokemon';
 import {ElementType, PokemonType} from "../../../models/pokemon-type";
 
@@ -7,13 +7,17 @@ import {ElementType, PokemonType} from "../../../models/pokemon-type";
   selector: 'app-battle',
   templateUrl: './battle.component.html',
   styleUrls: ['./battle.component.css'],
+  providers: [ BattleService ]
 })
 export class BattleComponent implements OnInit {
   pokemon1! : Pokemon ;
   pokemon2! : Pokemon ;
   btnIcon! : string;
   started! : boolean ;
-  battle! : Battle ;
+
+  constructor(public battleService:BattleService) {
+  }
+
   ngOnInit() : void {
     this.pokemon1 = new Pokemon({
       name: 'Dracaufeu',
@@ -38,22 +42,22 @@ export class BattleComponent implements OnInit {
     });
     this.btnIcon = 'play_arrow';
     this.started = false;
-    this.battle = new Battle(this.pokemon1, this.pokemon2);
+    this.battleService.init(this.pokemon1,this.pokemon2);
   }
 
   handleBattle(): void {
-    if (!this.battle.isPlaying) {
-      this.battle.isPlaying = true;
+    if (!this.battleService.isPlaying) {
+      this.battleService.isPlaying = true;
       if(!this.started){
-        this.battle.messages.push({color:"black", text:this.pokemon1.name + " VS " + this.pokemon2.name});
+        this.battleService.messages.push({color:"black", text:this.pokemon1.name + " VS " + this.pokemon2.name});
         this.started = true;
       }
-      this.battle.start();
+      this.battleService.start();
       this.btnIcon = 'pause';
     } else {
-      this.battle.isPlaying = false;
+      this.battleService.isPlaying = false;
       this.btnIcon = 'play_arrow';
-      this.battle.messages.push({color:"grey",text:"... The game is paused ..."});
+      this.battleService.messages.push({color:"grey",text:"... The game is paused ..."});
     }
   }
 }
