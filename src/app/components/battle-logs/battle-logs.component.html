@@ -1,4 +1,5 @@
 <div class="battle-log-div">
+  <span *ngIf="date">Le combat a commencé  : {{date | date : 'medium' }} <br> </span>
   <span>Logs :</span>
   <div class="logs">
     <ul>

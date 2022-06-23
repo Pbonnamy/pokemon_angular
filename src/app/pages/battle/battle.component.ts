@@ -12,12 +12,11 @@ import {ElementType, PokemonType} from "../../../models/pokemon-type";
 export class BattleComponent implements OnInit {
   pokemon1! : Pokemon ;
   pokemon2! : Pokemon ;
-  btnIcon! : string;
-  started! : boolean ;
-
+  date : null | number = null;
+  started = false;
+  btnIcon = 'play_arrow';
   constructor(public battleService:BattleService) {
   }
-
   ngOnInit() : void {
     this.pokemon1 = new Pokemon({
       name: 'Dracaufeu',
@@ -40,8 +39,6 @@ export class BattleComponent implements OnInit {
       code: '009',
       playerNumber: 2,
     });
-    this.btnIcon = 'play_arrow';
-    this.started = false;
     this.battleService.init(this.pokemon1,this.pokemon2);
   }
 
@@ -51,13 +48,14 @@ export class BattleComponent implements OnInit {
       if(!this.started){
         this.battleService.messages.push({color:"black", text:this.pokemon1.name + " VS " + this.pokemon2.name});
         this.started = true;
+        this.date = Date.now() ;
       }
       this.battleService.start();
       this.btnIcon = 'pause';
     } else {
       this.battleService.isPlaying = false;
       this.btnIcon = 'play_arrow';
-      this.battleService.messages.push({color:"grey",text:"... The game is paused ..."});
+      this.battle.messages.push({color:"grey",text:"... Le jeu est en pause ..."});
     }
   }
 }
