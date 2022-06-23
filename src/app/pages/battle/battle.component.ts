@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Battle } from 'src/models/battle';
 import { Pokemon } from 'src/models/pokemon';
+import {ElementType, PokemonType} from "../../../models/pokemon-type";
 
 @Component({
   selector: 'app-battle',
@@ -20,7 +21,7 @@ export class BattleComponent implements OnInit {
       def: 30,
       speed: 40,
       maxHp: 300,
-      type: [],
+      type: [new PokemonType(ElementType.Fire,"red")],
       code: '006',
       playerNumber: 1,
     });
@@ -31,7 +32,7 @@ export class BattleComponent implements OnInit {
       def: 25,
       speed: 15,
       maxHp: 200,
-      type: [],
+      type: [new PokemonType(ElementType.Water,"blue")],
       code: '009',
       playerNumber: 2,
     });

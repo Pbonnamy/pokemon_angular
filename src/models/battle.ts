@@ -29,8 +29,8 @@ export class Battle {
 
   attack(attacker: Pokemon, defender: Pokemon) {
     const dmg = attacker.atk - defender.def;
-    if(attacker.playerNumber === 1) this.messages.push({color:"blue",text:attacker.name + " inflige " + dmg + " à " + defender.name});
-    if(attacker.playerNumber === 2) this.messages.push({color:"green",text:attacker.name + " inflige " + dmg + " à " + defender.name});
+    if(attacker.playerNumber === 1) this.messages.push({color:attacker.type[0].color,text:attacker.name + " inflige " + dmg + " à " + defender.name});
+    if(attacker.playerNumber === 2) this.messages.push({color:attacker.type[0].color,text:attacker.name + " inflige " + dmg + " à " + defender.name});
     defender.hp -= dmg;
   }
 
