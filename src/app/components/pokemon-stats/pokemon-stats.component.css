@@ -9,16 +9,16 @@
 }
 
 .progress-bar {
-    height: 20px; 
-    width: 275px; 
-    margin-left: auto; 
-    margin-right: auto; 
+    height: 20px;
+    width: 275px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
     border-radius: 25px;
 }
 
 .poke-name {
-    position: absolute; 
+    position: absolute;
     top : 10px;
     font-size: 20px;
     -webkit-text-stroke: 1px #0075BE;
@@ -58,5 +58,18 @@
 
 ::ng-deep .red .mat-progress-bar-buffer {
     background: #ffcccb !important;
+}
+
+
+@keyframes death_animation {
+  from {filter: grayscale(0%); opacity: 1;}
+  to {filter: grayscale(100%); opacity: 0;}
+}
+
+.deadPokemon{
+  filter: grayscale(100%);
+  opacity: 0;
+  animation-name: death_animation;
+  animation-duration: 1s;
 }
 

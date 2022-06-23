@@ -29,7 +29,3 @@
   transform: scale(2.5);
 }
 
-@keyframes death_animation {
-  from {filter: grayscale(0%);}
-  to {filter: grayscale(100%);}
-}
