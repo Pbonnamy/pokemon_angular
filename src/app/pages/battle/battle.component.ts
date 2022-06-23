@@ -55,7 +55,7 @@ export class BattleComponent implements OnInit {
     } else {
       this.battleService.isPlaying = false;
       this.btnIcon = 'play_arrow';
-      this.battle.messages.push({color:"grey",text:"... Le jeu est en pause ..."});
+      this.battleService.messages.push({color:"grey",text:"... Le jeu est en pause ..."});
     }
   }
 }
