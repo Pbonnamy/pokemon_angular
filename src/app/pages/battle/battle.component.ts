@@ -45,7 +45,7 @@ export class BattleComponent implements OnInit {
     if (!this.battle.isPlaying) {
       this.battle.isPlaying = true;
       if(!this.started){
-        this.battle.messages.push({color:"yellow", text:this.pokemon1.name + " VS " + this.pokemon2.name});
+        this.battle.messages.push({color:"black", text:this.pokemon1.name + " VS " + this.pokemon2.name});
         this.started = true;
       }
       this.battle.start();
