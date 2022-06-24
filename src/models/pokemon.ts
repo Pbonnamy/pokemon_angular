@@ -8,7 +8,6 @@ export interface PokemonProps {
   speed: number;
   maxHp: number;
   type: Array<PokemonType>;
-  playerNumber: number;
 }
 
 export class Pokemon {
@@ -20,7 +19,6 @@ export class Pokemon {
   maxHp: number;
   hp: number;
   type: Array<PokemonType>;
-  playerNumber: number;
 
   constructor(props: PokemonProps) {
     this.code = props.code;
@@ -31,6 +29,5 @@ export class Pokemon {
     this.maxHp = props.maxHp;
     this.hp = props.maxHp;
     this.type = props.type;
-    this.playerNumber = props.playerNumber;
   }
 }

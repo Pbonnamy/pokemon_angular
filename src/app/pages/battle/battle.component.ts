@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BattleService } from '../../../services/battle.service';
 import { Pokemon } from 'src/models/pokemon';
 import { ElementType, PokemonType } from '../../../models/pokemon-type';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-battle',
@@ -15,6 +16,7 @@ export class BattleComponent implements OnInit {
   date: null | number = null;
   started = false;
   btnIcon = 'play_arrow';
+  battle: null | Subscription = null;
 
   constructor(public battleService: BattleService) {}
 
@@ -27,7 +29,6 @@ export class BattleComponent implements OnInit {
       maxHp: 300,
       type: [new PokemonType(ElementType.Fire, 'red')],
       code: '006',
-      playerNumber: 1,
     });
 
     this.pokemon2 = new Pokemon({
@@ -38,15 +39,14 @@ export class BattleComponent implements OnInit {
       maxHp: 200,
       type: [new PokemonType(ElementType.Water, 'blue')],
       code: '009',
-      playerNumber: 2,
     });
-
+    
     this.battleService.init(this.pokemon1, this.pokemon2);
   }
 
   handleBattle(): void {
-    if (!this.battleService.isPlaying) {
-      this.battleService.isPlaying = true;
+    if (!this.battle) {
+
       if (!this.started) {
         this.battleService.messages.push({
           color: 'black',
@@ -55,10 +55,14 @@ export class BattleComponent implements OnInit {
         this.started = true;
         this.date = Date.now();
       }
-      this.battleService.start().subscribe();
+
+      this.battle = this.battleService.start().subscribe();
       this.btnIcon = 'pause';
     } else {
-      this.battleService.isPlaying = false;
+
+      this.battle.unsubscribe();
+      this.battle = null;
+
       this.btnIcon = 'play_arrow';
       this.battleService.messages.push({
         color: 'grey',
