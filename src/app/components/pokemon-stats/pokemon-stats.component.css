@@ -1,75 +1,79 @@
 .poke-img {
-    height: 40vh;
+  height: 40vh;
 }
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .progress-bar {
-    height: 20px;
-    width: 275px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    border-radius: 25px;
+  height: 20px;
+  width: 275px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 25px;
 }
 
 .poke-name {
-    position: absolute;
-    top : 10px;
-    font-size: 20px;
-    -webkit-text-stroke: 1px #0075BE;
-    color: #FFCC00;
-    text-shadow: 1px 1px 2px black;
-    font-weight: 500;
-    font-family: 'Pokemon-Solid';
+  position: absolute;
+  top: 10px;
+  font-size: 20px;
+  -webkit-text-stroke: 1px #0075be;
+  color: #ffcc00;
+  text-shadow: 1px 1px 2px black;
+  font-weight: 500;
+  font-family: "Pokemon-Solid";
 }
 
 ::ng-deep .green .mat-progress-bar-fill::after {
-    background-color: green !important;
+  background-color: green !important;
 }
 
 ::ng-deep .green .mat-progress-bar-buffer {
-    background: lightgreen !important;
+  background: lightgreen !important;
 }
 
 ::ng-deep .orange .mat-progress-bar-fill::after {
-    background-color: orange !important;
+  background-color: orange !important;
 }
 
 ::ng-deep .orange .mat-progress-bar-buffer {
-    background: #FFD580 !important;
+  background: #ffd580 !important;
 }
 
 ::ng-deep .yellow .mat-progress-bar-fill::after {
-    background-color: yellow !important;
+  background-color: yellow !important;
 }
 
 ::ng-deep .yellow .mat-progress-bar-buffer {
-    background: lightyellow !important;
+  background: lightyellow !important;
 }
 
 ::ng-deep .red .mat-progress-bar-fill::after {
-    background-color: red !important;
+  background-color: red !important;
 }
 
 ::ng-deep .red .mat-progress-bar-buffer {
-    background: #ffcccb !important;
+  background: #ffcccb !important;
 }
-
 
 @keyframes death_animation {
-  from {filter: grayscale(0%); opacity: 1;}
-  to {filter: grayscale(100%); opacity: 0;}
+  from {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  to {
+    filter: grayscale(100%);
+    opacity: 0;
+  }
 }
 
-.deadPokemon{
+.deadPokemon {
   filter: grayscale(100%);
   opacity: 0;
   animation-name: death_animation;
   animation-duration: 1s;
 }
-

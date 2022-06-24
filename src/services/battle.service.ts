@@ -42,8 +42,18 @@ export class BattleService {
         if (this.poke2.hp > 0) {
           this.attack(this.poke2, this.poke1);
         }
-        if(this.poke1.hp <= 0) this.messages.push({color:"black",text:this.poke1.name + " est KO !"});
-        if(this.poke2.hp <= 0) this.messages.push({color:"black",text:this.poke2.name + " est KO !"});
+
+        if (this.poke1.hp <= 0)
+          this.messages.push({
+            color: 'black',
+            text: this.poke1.name + ' est KO !',
+          });
+
+        if (this.poke2.hp <= 0)
+          this.messages.push({
+            color: 'black',
+            text: this.poke2.name + ' est KO !',
+          });
       })
     );
   }

@@ -1,7 +1,7 @@
 <div style="position: relative">
   <img
     [ngClass]="{
-      'deadPokemon': (pokemon.hp <= 0)
+      deadPokemon: pokemon.hp <= 0
     }"
     src="../../../assets/pokemons/{{ pokemon.code }}.png"
     class="poke-img center"
