@@ -50,7 +50,7 @@ export class BattleComponent implements OnInit {
         this.started = true;
         this.date = Date.now() ;
       }
-      this.battleService.start();
+      this.battleService.start().subscribe();
       this.btnIcon = 'pause';
     } else {
       this.battleService.isPlaying = false;
