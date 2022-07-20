@@ -7,7 +7,8 @@ export interface PokemonProps {
   def: number;
   speed: number;
   maxHp: number;
-  type: Array<PokemonType>;
+  img: string;
+  type: PokemonType;
 }
 
 export class Pokemon {
@@ -18,7 +19,8 @@ export class Pokemon {
   speed: number;
   maxHp: number;
   hp: number;
-  type: Array<PokemonType>;
+  img: string;
+  type: PokemonType;
 
   constructor(props: PokemonProps) {
     this.code = props.code;
@@ -28,6 +30,7 @@ export class Pokemon {
     this.speed = props.speed;
     this.maxHp = props.maxHp;
     this.hp = props.maxHp;
+    this.img = props.img;
     this.type = props.type;
   }
 }

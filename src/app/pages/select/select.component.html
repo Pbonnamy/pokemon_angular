@@ -1,8 +1,21 @@
-<div style="display: flex; justify-content: space-evenly;">
-    <div>
-        <app-select-pokemon></app-select-pokemon>
+<div style="margin-top: 5vh; margin-bottom: 5vh;">
+    <div style="display: flex; justify-content: center;">
+        <button mat-flat-button (click)="fight()" style="width: 25vw; background-color: var(--success); color: white;" [disabled]="!pok1 || !pok2">
+            Lancer le combat
+        </button>
     </div>
-    <div>
-        <app-select-pokemon></app-select-pokemon>
+    <div style="margin-top: 5vh; display: flex; justify-content: space-evenly; width: 100%;">
+        <div style="width: 45vw">
+            <app-select-pokemon (select)="pok1 = $event" [pokemons]="pokemons"></app-select-pokemon>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div style="width: 45vw">
+            <app-select-pokemon (select)="pok2 = $event" [pokemons]="pokemons"></app-select-pokemon>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 25px;">
+        <button mat-flat-button (click)="load()" style="width: 50%; background-color: var(--success); color: white;">
+            Charger plus
+        </button>
     </div>
 </div>

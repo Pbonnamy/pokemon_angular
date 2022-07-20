@@ -21,11 +21,14 @@ export class BattleService {
   }
 
   attack(attacker: Pokemon, defender: Pokemon) {
-    const dmg = attacker.atk - defender.def;
+    let dmg = attacker.atk - defender.def;
+    dmg < 0 ? dmg = 0 : null;
+
     this.messages.push({
-      color: attacker.type[0].color,
+      color: attacker.type.color, 
       text: attacker.name + ' inflige ' + dmg + ' dégats à ' + defender.name,
     });
+    
     defender.hp -= dmg;
   }
 

@@ -1,5 +1,5 @@
 <div class="container">
-  <app-battle-logs [battle_logs]="battleService.messages" [date]="date" ></app-battle-logs>
+  <app-battle-logs [battle_logs]="battleService.messages || []" [date]="date" ></app-battle-logs>
 
   <div style="display: flex; justify-content: center">
     <button mat-flat-button class="poke-btn" mat-fab (click)="handleBattle()">
@@ -8,9 +8,9 @@
   </div>
 
   <div style="position: absolute; top: 20vh; right: 10vw">
-    <app-pokemon-stats [pokemon]="pokemon1"></app-pokemon-stats>
+    <app-pokemon-stats [pokemon]="pokemon1" *ngIf="pokemon1"></app-pokemon-stats>
   </div>
   <div style="position: absolute; bottom: 10vh; left: 10vw">
-    <app-pokemon-stats [pokemon]="pokemon2"></app-pokemon-stats>
+    <app-pokemon-stats [pokemon]="pokemon2" *ngIf="pokemon2"></app-pokemon-stats>
   </div>
 </div>

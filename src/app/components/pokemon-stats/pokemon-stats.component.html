@@ -1,9 +1,7 @@
 <div style="position: relative">
   <img
-    [ngClass]="{
-      deadPokemon: pokemon.hp <= 0
-    }"
-    src="../../../assets/pokemons/{{ pokemon.code }}.png"
+    [ngClass]="{ deadPokemon: pokemon.hp <= 0}"
+    src="{{ pokemon.img }}"
     class="poke-img center"
   />
   <mat-progress-bar

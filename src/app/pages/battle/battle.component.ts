@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Pokemon } from 'src/app/models/pokemon';
 import { ElementType, PokemonType } from 'src/app/models/pokemon-type';
 import { BattleService } from 'src/app/services/battle/battle.service';
+import { PokeApiService } from 'src/app/services/poke-api/poke-api.service';
 
 @Component({
   selector: 'app-battle',
@@ -18,35 +20,47 @@ export class BattleComponent implements OnInit {
   btnIcon = 'play_arrow';
   battle: null | Subscription = null;
 
-  constructor(public battleService: BattleService) {}
+  constructor(public battleService: BattleService, private route: ActivatedRoute, private router: Router, private api: PokeApiService) {}
 
   ngOnInit(): void {
-    this.pokemon1 = new Pokemon({
-      name: 'Dracaufeu',
-      atk: 50,
-      def: 30,
-      speed: 40,
-      maxHp: 300,
-      type: [new PokemonType(ElementType.Fire, 'red')],
-      code: '006',
-    });
+    this.route.queryParams.subscribe(params => {
+      if (!params['pok1'] || !params['pok2']) {
+        this.router.navigate(['/select']);
+      }else {
 
-    this.pokemon2 = new Pokemon({
-      name: 'Tortank',
-      atk: 75,
-      def: 25,
-      speed: 15,
-      maxHp: 200,
-      type: [new PokemonType(ElementType.Water, 'blue')],
-      code: '009',
+        this.api.getPokemon(params['pok1']).subscribe((data: any) => {
+          this.pokemon1 = new Pokemon({
+            name: data.name,
+            atk: data.stats[1].base_stat,
+            def: data.stats[2].base_stat,
+            speed: data.stats[5].base_stat,
+            maxHp: data.stats[0].base_stat,
+            type: new PokemonType(ElementType.Fire, 'red'),
+            code: data.id,
+            img: data.sprites.front_default,
+          });
+        });
+
+        this.api.getPokemon(params['pok2']).subscribe((data: any) => {
+          this.pokemon2 = new Pokemon({
+            name: data.name,
+            atk: data.stats[1].base_stat,
+            def: data.stats[2].base_stat,
+            speed: data.stats[5].base_stat,
+            maxHp: data.stats[0].base_stat,
+            type: new PokemonType(ElementType.Fire, 'red'),
+            code: data.id,
+            img: data.sprites.back_default
+          });
+        });
+
+      }
     });
-    
-    this.battleService.init(this.pokemon1, this.pokemon2);
   }
 
   handleBattle(): void {
     if (!this.battle) {
-
+      this.battleService.init(this.pokemon1, this.pokemon2);
       if (!this.started) {
         this.battleService.messages.push({
           color: 'black',
