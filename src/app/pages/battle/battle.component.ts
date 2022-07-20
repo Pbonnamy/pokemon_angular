@@ -23,7 +23,7 @@ export class BattleComponent implements OnInit {
   ngOnInit(): void {
     this.pokemon1 = new Pokemon({
       name: 'Dracaufeu',
-      atk: 50,
+      atk: 55.2,
       def: 30,
       speed: 40,
       maxHp: 300,
@@ -40,7 +40,7 @@ export class BattleComponent implements OnInit {
       type: [new PokemonType(ElementType.Water, 'blue')],
       code: '009',
     });
-    
+
     this.battleService.init(this.pokemon1, this.pokemon2);
   }
 

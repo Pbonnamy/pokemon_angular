@@ -1,8 +1,13 @@
 <div class="battle-log-div" style="overflow: auto;">
-  <div *ngIf="date">Le combat a commencé : {{ date | date: "medium" }}</div>
+  <div *ngIf="date">Le combat a commencé le {{ date | date: 'dd/MM/yy, à HH:mm:ss' }}</div>
   <div style="margin-top: 10px;">
     <div *ngFor="let item of battle_logs.reverse()" [style.color]="item.color">
-      {{ item.text }}
+      <div *ngIf="item.dmg ;else noDamage">
+        {{ item.text.split("/")[0]}} {{item.text.split("/")[1] | number :'1.1-2'}} {{ item.text.split("/")[2]}}
+      </div>
+      <ng-template #noDamage>
+        {{ item.text}}
+      </ng-template>
     </div>
   </div>
 </div>

@@ -8,7 +8,7 @@ import { Pokemon } from 'src/app/models/pokemon';
 export class BattleService {
   poke1!: Pokemon;
   poke2!: Pokemon;
-  messages!: { color: string; text: string }[];
+  messages!: { color: string; text: string, dmg?: number | null  }[];
   round!: number;
 
   constructor() {}
@@ -21,12 +21,13 @@ export class BattleService {
   }
 
   attack(attacker: Pokemon, defender: Pokemon) {
-    const dmg = attacker.atk - defender.def;
+    const damage: number = attacker.atk - defender.def;
     this.messages.push({
       color: attacker.type[0].color,
-      text: attacker.name + ' inflige ' + dmg + ' dégats à ' + defender.name,
+      text: attacker.name + ' inflige ' + "/" + damage +"/"+ ' dégats à ' + defender.name,
+      dmg: damage
     });
-    defender.hp -= dmg;
+    defender.hp -= damage;
   }
 
   start(): Observable<void> {
@@ -48,7 +49,7 @@ export class BattleService {
             color: 'black',
             text: this.poke1.name + ' est KO !',
           });
-          
+
         if (this.poke2.hp <= 0)
           this.messages.push({
             color: 'black',
