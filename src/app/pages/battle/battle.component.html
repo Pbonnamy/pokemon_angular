@@ -1,10 +1,5 @@
 <div class="container">
-  <app-battle-logs
-    class="logs"
-    [battle_logs]="battleService.messages"
-    [date]="date"
-    style="overflow: auto"
-  ></app-battle-logs>
+  <app-battle-logs [battle_logs]="battleService.messages" [date]="date" ></app-battle-logs>
 
   <div style="display: flex; justify-content: center">
     <button mat-flat-button class="poke-btn" mat-fab (click)="handleBattle()">

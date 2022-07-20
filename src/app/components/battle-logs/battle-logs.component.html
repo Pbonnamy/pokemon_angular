@@ -1,12 +1,8 @@
-<div class="battle-log-div">
-  <span *ngIf="date">Le combat a commencé : {{ date | date: "medium" }}</span>
-  <br />
-  <span>Logs :</span>
-  <div class="logs">
-    <ul>
-      <li *ngFor="let item of battle_logs.reverse()" [style.color]="item.color">
-        {{ item.text }}
-      </li>
-    </ul>
+<div class="battle-log-div" style="overflow: auto;">
+  <div *ngIf="date">Le combat a commencé : {{ date | date: "medium" }}</div>
+  <div style="margin-top: 10px;">
+    <div *ngFor="let item of battle_logs.reverse()" [style.color]="item.color">
+      {{ item.text }}
+    </div>
   </div>
 </div>
