@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BattleService } from '../../../services/battle.service';
-import { Pokemon } from 'src/models/pokemon';
-import { ElementType, PokemonType } from '../../../models/pokemon-type';
 import { Subscription } from 'rxjs';
+import { Pokemon } from 'src/app/models/pokemon';
+import { ElementType, PokemonType } from 'src/app/models/pokemon-type';
+import { BattleService } from 'src/app/services/battle/battle.service';
 
 @Component({
   selector: 'app-battle',

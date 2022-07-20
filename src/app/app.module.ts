@@ -15,6 +15,9 @@ import { BattleLogsComponent } from './components/battle-logs/battle-logs.compon
 
 import localFR from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
+import { SelectComponent } from './pages/select/select.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SelectPokemonComponent } from './components/select-pokemon/select-pokemon.component';
 registerLocaleData(localFR);
 
 @NgModule({
@@ -23,6 +26,8 @@ registerLocaleData(localFR);
     PokemonStatsComponent,
     BattleComponent,
     BattleLogsComponent,
+    SelectComponent,
+    SelectPokemonComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,7 @@ registerLocaleData(localFR);
     AppRoutingModule,
     MatButtonModule,
     MatIconModule,
+    HttpClientModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent],
