@@ -2,7 +2,7 @@
   <div *ngIf="date">Le combat a commencé le {{ date | date: 'dd/MM/yy, à HH:mm:ss' }}</div>
   <div style="margin-top: 10px;">
     <div *ngFor="let item of battle_logs.reverse()" [style.color]="item.color">
-      <div *ngIf="item.dmg ;else noDamage">
+      <div *ngIf="item.dmg != null ;else noDamage">
         {{ item.text.split("/")[0]}} {{item.text.split("/")[1] | number :'1.1-2'}} {{ item.text.split("/")[2]}}
       </div>
       <ng-template #noDamage>
