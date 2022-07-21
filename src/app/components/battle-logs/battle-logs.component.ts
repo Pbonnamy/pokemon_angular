@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./battle-logs.component.css'],
 })
 export class BattleLogsComponent implements OnInit {
-  @Input() battle_logs: { color: string; text: string }[] = [];
+  @Input() battle_logs: { color: string, text: string ,dmg? : number | null}[] = [];
   @Input() date: null | number = null;
 
   constructor() {}
