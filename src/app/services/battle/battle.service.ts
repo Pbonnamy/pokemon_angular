@@ -28,7 +28,6 @@ export class BattleService {
       color: attacker.type.color, 
       text: attacker.name + ' inflige ' + dmg + ' dégats à ' + defender.name,
     });
-    
     defender.hp -= dmg;
   }
 

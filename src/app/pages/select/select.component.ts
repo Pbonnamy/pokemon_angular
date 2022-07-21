@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AddPokemonDialogComponent } from 'src/app/components/add-pokemon-dialog/add-pokemon-dialog.component';
 import { PokeApiService } from 'src/app/services/poke-api/poke-api.service';
 
 @Component({
@@ -14,7 +16,7 @@ export class SelectComponent implements OnInit {
   offset: number = 0;
   limit: number = 15;
 
-  constructor(private router: Router, private api: PokeApiService) { }
+  constructor(private router: Router, private api: PokeApiService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getPokemons();
@@ -42,5 +44,13 @@ export class SelectComponent implements OnInit {
   load() {
     this.offset += this.limit;
     this.getPokemons();
+  }
+
+  add() {
+    this.dialog.open(AddPokemonDialogComponent, {
+      width: '600px',
+      autoFocus: false,
+      disableClose: true,
+    });
   }
 }

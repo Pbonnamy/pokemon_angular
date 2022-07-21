@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { PokeApiService } from 'src/app/services/poke-api/poke-api.service';
 
 @Component({
   selector: 'app-select-pokemon',
@@ -10,8 +9,8 @@ export class SelectPokemonComponent implements OnInit {
   @Input() pokemons: {name: string, id: string, img: string}[] = [];
   @Output() select = new EventEmitter<string>();
   selected: string | null = null;
-  
-  constructor(private api: PokeApiService) { }
+
+  constructor() { }
 
   ngOnInit(): void {
   }

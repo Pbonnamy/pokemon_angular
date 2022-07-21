@@ -1,0 +1,46 @@
+<div style="display: flex; width: 100%">
+  <div style="margin-top: 5px">
+    <h1 mat-dialog-title>Ajouter un pokémon</h1>
+  </div>
+  <div style="margin-left: auto">
+    <button mat-icon-button (click)="ref.close()" style="color: var(--error)">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>
+<div mat-dialog-content>
+    <form #contactForm="ngForm" (submit)="save()" novalidate>
+        <mat-form-field appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input matInput name="name" required/>
+            <mat-icon matSuffix>sell</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Attaque</mat-label>
+            <input matInput name="att" input="number" required min="0"/>
+            <mat-icon matSuffix>local_fire_department</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" input="number">
+            <mat-label>Point de vie</mat-label>
+            <input matInput name="hp" required min="0"/>
+            <mat-icon matSuffix>emergency</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" input="number">
+            <mat-label>Défense</mat-label>
+            <input matInput name="def" required min="0"/>
+            <mat-icon matSuffix>shield</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Type</mat-label>
+            <mat-select  name="type" required>
+              <mat-option *ngFor="let type of types" value="{{type}}">{{type}}</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>category</mat-icon>
+        </mat-form-field>
+        <div style="display: flex; justify-content:center;">
+            <button mat-flat-button type="submit" [disabled]="contactForm.invalid" style="width: 50%; background-color: var(--success); color: white;">
+                Créer
+            </button>
+        </div>
+    </form>
+</div>

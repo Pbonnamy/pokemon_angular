@@ -1,8 +1,8 @@
 <div>
     <div style="text-align: center; font-weight: 500; font-size: 20px;">
-        Sélectionner un pokémon
+        Sélectionnez un pokémon
     </div>
-    <div style="margin-top: 25px; flex-wrap: wrap; display: flex; justify-content: center;">
+    <div style="margin-top: 25px; flex-wrap: wrap; display: flex; justify-content: center; height: 72vh; overflow: auto;">
         <app-pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon" [selected]="selected === pokemon.id" style="flex: 0 0 25%;" (click)="selectPokemon(pokemon.id)"></app-pokemon-card>
     </div>
 </div>

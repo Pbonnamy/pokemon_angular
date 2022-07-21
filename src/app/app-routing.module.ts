@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BattleComponent } from './pages/battle/battle.component';
+import { ErrorComponent } from './pages/error/error.component';
 import { SelectComponent } from './pages/select/select.component';
 
 const routes: Routes = [
@@ -11,7 +12,11 @@ const routes: Routes = [
   {
     path: 'battle',
     component: BattleComponent,
-  }
+  },
+  { 
+    path: '**', 
+    component: ErrorComponent
+  },
 ];
 
 @NgModule({
