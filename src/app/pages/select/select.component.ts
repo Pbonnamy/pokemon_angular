@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AddPokemonDialogComponent } from 'src/app/components/add-pokemon-dialog/add-pokemon-dialog.component';
+import { PokemonType } from 'src/app/models/pokemon-type';
 import { PokeApiService } from 'src/app/services/poke-api/poke-api.service';
 
 @Component({
@@ -47,10 +48,14 @@ export class SelectComponent implements OnInit {
   }
 
   add() {
-    this.dialog.open(AddPokemonDialogComponent, {
+    const diag = this.dialog.open(AddPokemonDialogComponent, {
       width: '600px',
       autoFocus: false,
       disableClose: true,
+    });
+
+    diag.componentInstance.updtPokemon.subscribe((pok: { name: string}) => {
+      this.pokemons.unshift({name: pok.name, id: '', img: ''});
     });
   }
 }

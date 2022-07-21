@@ -12,27 +12,27 @@
     <form #contactForm="ngForm" (submit)="save()" novalidate>
         <mat-form-field appearance="outline">
             <mat-label>Nom</mat-label>
-            <input matInput name="name" required/>
+            <input matInput name="name" required [(ngModel)]="pokemon.name"/>
             <mat-icon matSuffix>sell</mat-icon>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Attaque</mat-label>
-            <input matInput name="att" input="number" required min="0"/>
+            <input matInput name="att" input="number" required [(ngModel)]="pokemon.att"/>
             <mat-icon matSuffix>local_fire_department</mat-icon>
         </mat-form-field>
-        <mat-form-field appearance="outline" input="number">
+        <mat-form-field appearance="outline">
             <mat-label>Point de vie</mat-label>
-            <input matInput name="hp" required min="0"/>
+            <input matInput name="hp" required input="number"  [(ngModel)]="pokemon.hp"/>
             <mat-icon matSuffix>emergency</mat-icon>
         </mat-form-field>
-        <mat-form-field appearance="outline" input="number">
+        <mat-form-field appearance="outline">
             <mat-label>Défense</mat-label>
-            <input matInput name="def" required min="0"/>
+            <input matInput name="def" required input="number" [(ngModel)]="pokemon.def"/>
             <mat-icon matSuffix>shield</mat-icon>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Type</mat-label>
-            <mat-select  name="type" required>
+            <mat-select  name="type" required [(ngModel)]="pokemon.type">
               <mat-option *ngFor="let type of types" value="{{type}}">{{type}}</mat-option>
             </mat-select>
             <mat-icon matSuffix>category</mat-icon>

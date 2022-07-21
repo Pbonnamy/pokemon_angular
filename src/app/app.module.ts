@@ -42,8 +42,8 @@ registerLocaleData(localFR);
     AddPokemonDialogComponent,
   ],
   imports: [
-    FormsModule,
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatGridListModule,
     MatProgressBarModule,
