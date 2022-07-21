@@ -23,6 +23,7 @@ export class BattleService {
   attack(attacker: Pokemon, defender: Pokemon) {
     let damage: number = attacker.atk - defender.def;
     damage < 0 ? damage = 0 : null;
+    damage += Math.floor(Math.random() * ((attacker.atk)*25/100));
 
     this.messages.push({
       color: attacker.type.color,

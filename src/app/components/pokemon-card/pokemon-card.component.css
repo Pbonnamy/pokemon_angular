@@ -12,3 +12,8 @@
     cursor: pointer;
     transform: scale(1.03);
 }
+
+.poke-img {
+    width: 100px; 
+    margin: auto;
+}

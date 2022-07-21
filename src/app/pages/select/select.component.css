@@ -1,0 +1,12 @@
+.btn-class {
+    width: 25vw; 
+    background-color: var(--success); 
+    color: white;
+}
+
+.select-contain {
+    margin-top: 5vh; 
+    display: flex; 
+    justify-content: space-evenly; 
+    width: 100%;
+}

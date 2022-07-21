@@ -1,13 +1,13 @@
 <div style="margin-top: 25px; margin-bottom: 25px">
     <div style="display: flex; justify-content: center;">
-        <button mat-flat-button (click)="fight()" style="width: 25vw; background-color: var(--success); color: white; margin-right: 5px;" [disabled]="!pok1 || !pok2">
+        <button mat-flat-button (click)="fight()" style="margin-right: 5px;" class="btn-class" [disabled]="!pok1 || !pok2">
             Lancer le combat
         </button>
-        <button mat-flat-button (click)="add()" style="width: 25vw; background-color: var(--info); color: white; margin-left: 5px;">
+        <button mat-flat-button (click)="add()" style="margin-left: 5px;" class="btn-class">
             Ajouter un pokémon
         </button>
     </div>
-    <div style="margin-top: 5vh; display: flex; justify-content: space-evenly; width: 100%;">
+    <div class="select-contain">
         <div style="width: 45vw">
             <app-select-pokemon (select)="pok1 = $event" [pokemons]="pokemons"></app-select-pokemon>
         </div>
